@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>الذكاء الاصطناعي وضغط الوسائط المتعددة</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <img src="assets/images/hero.webp" alt="شعار الموقع" class="logo" />
+    <h1>الذكاء الاصطناعي وضغط الوسائط المتعددة</h1>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#rle">ضغط RLE</a></li>
+        <li><a href="#huffman">ترميز هوفمان</a></li>
+        <li><a href="#videos">الفيديوهات</a></li>
+        <li><a href="#about">من نحن</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="rle" class="card">
+      <h2>ضغط البيانات باستخدام RLE</h2>
+      <p>ضغط البيانات باستخدام RLE (ترميز الأطوال المتكررة) هو تقنية بسيطة وفعالة لتقليل حجم البيانات، خاصة في الصور التي تحتوي على مناطق متجانسة من الألوان أو القيم.</p>
+      <p><strong>الفكرة الأساسية:</strong> بدلاً من تخزين كل بكسل مكرر، نقوم بتخزين عدد مرات التكرار والقيمة نفسها.</p>
+      <p><strong>مثال نصي:</strong> <code>AAABBBBCDDDDDDEEE → 3A4B1C6D3E</code></p>
+      <p>في الصور الثنائية (أبيض وأسود)، يتم تمثيل كل صف بسلسلة من الأطوال التي تصف التكرارات المتتالية للبكسلات السوداء والبيضاء.</p>
+      <div class="image-grid">
+        <div class="image-item">
+          <img src="assets/images/rle_example.webp" alt="مثال RLE" class="zoomable" />
+          <p class="image-description">الصورة توضح كيف يتم ضغط صورة ثنائية باستخدام RLE، حيث يتم استبدال التكرارات المتتالية بأرقام تمثل عدد البكسلات المتشابهة.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="huffman" class="card">
+      <h2>ضغط الصور باستخدام ترميز هوفمان</h2>
+      <p>ترميز هوفمان هو خوارزمية ضغط بيانات تعتمد على تكرار الرموز. الفكرة هي إعطاء رموز ثنائية أقصر للرموز الأكثر تكرارًا، ورموز أطول للرموز الأقل تكرارًا.</p>
+      <p><strong>مثال:</strong> إذا كانت الرموز وتكرارها كالتالي:</p>
+      <ul>
+        <li>A: 20 مرة</li>
+        <li>B: 10 مرات</li>
+        <li>C: 10 مرات</li>
+        <li>D: 30 مرة</li>
+        <li>E: 30 مرة</li>
+      </ul>
+      <p>فإن ترميز هوفمان يعطي:</p>
+      <ul>
+        <li>A: 00</li>
+        <li>B: 010</li>
+        <li>C: 011</li>
+        <li>D: 10</li>
+        <li>E: 11</li>
+      </ul>
+      <div class="image-grid">
+        <div class="image-item">
+          <img src="assets/images/huffman_tree.webp" alt="شجرة هوفمان" class="zoomable" />
+          <p class="image-description">الصورة تعرض شجرة ترميز هوفمان التي تُستخدم لتحديد الرموز الثنائية بناءً على تكرار كل رمز.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="videos" class="card">
+      <h2>سلسلة الفيديوهات التعليمية</h2>
+      <div class="video-block">
+        <video controls preload="metadata" width="600" poster="assets/images/thumb1.webp">
+          <source src="assets/videos/lesson1.mp4" type="video/mp4">
+          متصفحك لا يدعم الفيديو.
+        </video>
+        <p class="video-caption">الفيديو الأول يشرح مفهوم ضغط البيانات باستخدام RLE مع أمثلة تطبيقية على الصور الثنائية.</p>
+      </div>
+      <div class="video-block">
+        <video controls preload="metadata" width="600" poster="assets/images/thumb2.webp">
+          <source src="assets/videos/lesson2.mp4" type="video/mp4">
+          متصفحك لا يدعم الفيديو.
+        </video>
+        <p class="video-caption">الفيديو الثاني يستعرض طريقة بناء شجرة هوفمان وكيفية استخدامها لضغط النصوص والصور.</p>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>من نحن</h2>
+      <p>هذا الموقع التعليمي مخصص لطلاب مقرر نظم الوسائط المتعددة، ويهدف إلى تبسيط مفاهيم ضغط البيانات باستخدام الذكاء الاصطناعي، من خلال أمثلة مرئية ومحتوى تفاعلي.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>تم إعداد المحتوى وفق محاضرات الدكتور جورج كراز، ويحتوي على أمثلة واقعية وصور توضيحية وفيديوهات تعليمية.</p>
+  </footer>
+
+  <div id="lightbox"></div>
+  <script src="js/zoom.js"></script>
+</body>
+</html>
